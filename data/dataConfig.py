@@ -9,8 +9,9 @@ class global_var:
     dep_data = '6'
     dep_field = '7'
     request_data = '8'
-    expect_data = '9'
-    run = '10'
+    expect_result = '9'
+    actual_result = '10'
+    run = '11'
 
 def get_test_name():
     return global_var.test_name
@@ -37,7 +38,10 @@ def get_request_data():
     return global_var.request_data
 
 def get_expect_data():
-    return global_var.expect_data
+    return global_var.expect_result
+
+def get_actual_result():
+    return global_var.actual_result
 
 def get_run():
     return global_var.run

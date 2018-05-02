@@ -66,3 +66,6 @@ class GetData:
             flag = False
         return flag
 
+    def write_result(self, row, value):
+        col = int(data.dataConfig.get_actual_result())
+        self.oper_excel.write_data(row, col, value)

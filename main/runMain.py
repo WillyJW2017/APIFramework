@@ -24,8 +24,11 @@ class RunMain:
                 compareResult = self.common_util.is_contain(expect_data, res)
                 if compareResult:
                     print('This test case pass')
+                    self.get_data.write_result(i, 'Passed')
+
                 else:
                     print('This test case failed')
+                    self.get_data.write_result(i, 'Failed')
             print(res)
             # return res
 
