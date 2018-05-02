@@ -16,7 +16,7 @@ class OperationJson:
 
     def get_data(self, key):
         return  self.returnData[key]
-
-if __name__ == '__main__':
-    op = OperationJson()
-    print(op.get_data('login'))
+#
+# if __name__ == '__main__':
+#     op = OperationJson()
+#     print(op.get_data('loginData'))

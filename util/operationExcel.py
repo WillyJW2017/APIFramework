@@ -24,10 +24,14 @@ class OperationExcel:
         return cell_data
 
     # 获取行数
-    def get_lines(self):
+    def get_rows(self):
         row = self.sheet.max_row
         return row
 
+    # 获取列数
+    def get_cols(self):
+        col = self.sheet.max_column
+        return col
 #
 # if __name__ == '__main__':
 #     # op = operationExcel('C:\\Willy\\Study\\API\\test.xlsx', 'UFTConfig')

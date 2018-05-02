@@ -1,16 +1,16 @@
 # 设置excel列常量
 
 class global_var:
-    test_name = '0'
-    url = '1'
-    method = '2'
-    header = '3'
-    dep_id = '4'
-    dep_data = '5'
-    dep_field = '6'
-    request_data = '7'
-    expect_data = '8'
-    run = '9'
+    test_name = '1'
+    url = '2'
+    method = '3'
+    header = '4'
+    dep_id = '5'
+    dep_data = '6'
+    dep_field = '7'
+    request_data = '8'
+    expect_data = '9'
+    run = '10'
 
 def get_test_name():
     return global_var.test_name
