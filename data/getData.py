@@ -66,6 +66,36 @@ class GetData:
             flag = False
         return flag
 
+
+
+    # 获取excel里面DependentResponseData列的数据
+    def get_dep_response_data(self, row):
+        col = int(data.dataConfig.get_dep_response_data())
+        dep_response_data = self.oper_excel.get_cell_data(row, col)
+        if dep_response_data == '':
+            return None
+        else:
+            return dep_response_data
+
+    # 获取excel里面DependentCaseId列的数据, 判断是否有case依赖
+    def get_dep_caseId(self, row):
+        col = int(data.dataConfig.get_dep_case_id())
+        dep_caseId = self.oper_excel.get_cell_data(row, col)
+        if dep_caseId == '':
+            return None
+        else:
+            return dep_caseId
+
+    # 获取excel里面DependentField列的数据
+    def get_dep_field_data(self, row):
+        col = int(data.dataConfig.get_dep_field())
+        dep_field = self.oper_excel.get_cell_data(row, col)
+        if dep_field == '':
+            return None
+        else:
+            return dep_field
+
+    # 写入数据到excel
     def write_result(self, row, value):
         col = int(data.dataConfig.get_actual_result())
         self.oper_excel.write_data(row, col, value)

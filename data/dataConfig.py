@@ -5,8 +5,8 @@ class global_var:
     url = '2'
     method = '3'
     header = '4'
-    dep_id = '5'
-    dep_data = '6'
+    dep_case_id = '5'
+    dep_response_data = '6'
     dep_field = '7'
     request_data = '8'
     expect_result = '9'
@@ -25,11 +25,11 @@ def get_method():
 def get_header():
     return global_var.header
 
-def get_dep_id():
-    return global_var.dep_id
+def get_dep_case_id():
+    return global_var.dep_case_id
 
-def get_dep_data():
-    return global_var.dep_data
+def get_dep_response_data():
+    return global_var.dep_response_data
 
 def get_dep_field():
     return global_var.dep_field

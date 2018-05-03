@@ -38,16 +38,38 @@ class OperationExcel:
         self.sheet.cell(row=row, column=col, value=value)
         self.workbook.save(filename = self.filePath)
 
-    def get_row_value(self, row):
+    # 根据case_id获取对应行的内容
+    def get_row_value_by_caseId(self, case_id):
+        row_num = self.get_row_num_by_caseId(case_id)
+        rows_value = self.get_row_value_by_rowNum(row_num)
+        return rows_value
 
-        rowValue = self.sheet.iter_rows(min_col=1, min_row=1, max_col=self.sheet.max_column, max_row=self.sheet.max_row)
+    # 根据case_id获取对应的行号
+    def get_row_num_by_caseId(self, case_id):
+        num = 1
+        cols_value = self.get_col_value_by_colId()
+        for col_value in cols_value:
+            if col_value.value in case_id:
+                return num
+            num = num + 1
 
+    # 根据行号找到该行的内容
+    def get_row_value_by_rowNum(self, row):
+        rowValue = self.sheet[row]
         return rowValue
 
-if __name__ == '__main__':
-#     # op = operationExcel('C:\\Willy\\Study\\API\\test.xlsx', 'UFTConfig')
-    op = OperationExcel()
-#     # print(op.get_cell_data(4, 1))
-#     # print(op.get_lines())
-#     op.write_data(10,1,'PASS!!!')
-    print(op.get_row_value(2))
+    # 根据列的id(A,B,C...)，获取某一列的内容，默认获取第一列
+    def get_col_value_by_colId(self, col_id = None):
+        if col_id != None:
+            colData = self.sheet[col_id]
+        else:
+            colData = self.sheet['A']
+        return colData
+
+# if __name__ == '__main__':
+# #     # op = operationExcel('C:\\Willy\\Study\\API\\test.xlsx', 'UFTConfig')
+#     op = OperationExcel()
+# #     # print(op.get_cell_data(4, 1))
+# #     # print(op.get_lines())
+# #     op.write_data(10,1,'PASS!!!')
+#     print(op.get_row_value_by_caseId('TC02'))
